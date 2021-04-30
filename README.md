@@ -1,6 +1,6 @@
 # Database Basics 
 
-## Objectives
+## Learning Goals
 
 - Describe how relational databases store data in tables composed of columns and rows
 - Use lower case and snake_case conventions for column names
