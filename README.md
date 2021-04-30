@@ -1,22 +1,20 @@
 # Database Basics 
 
-## Overview
+## Objectives
+
+- Describe how relational databases store data in tables composed of columns and rows
+- Use lower case and snake_case conventions for column names
+- Use the `CREATE TABLE` keywords to create a new table with columns, including the `id` column
+- Use the `.help` command to get a complete list of SQL commands
+- Use the `.tables` command to list all the tables in a database
+- Use the `.schema` command to look at the structure of a database
+- Use the `ALTER TABLE` keywords to add columns to a table
+- Use the `DROP TABLE` keywords to delete a table
+
+## Introduction
 
 We'll cover how to create and delete database tables in SQLite as well as how to
 add columns to an existing table.  
-
-## Objectives
-
-1. Describe how relational databases store data in tables composed of columns
-   and rows
-2. Use lower case and snake_case conventions for column names
-3. Use the `CREATE TABLE` keywords to create a new table with columns, including
-   the `id` column
-4. Use the `.help` command to get a complete list of SQL commands
-5. Use the `.tables` command to list all the tables in a database
-6. Use the `.schema` command to look at the structure of a database
-7. Use the `ALTER TABLE` keywords to add columns to a table
-8. Use the `DROP TABLE` keywords to delete a table
 
 ## Database Structure
 
