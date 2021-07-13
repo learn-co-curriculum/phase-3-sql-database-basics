@@ -1,20 +1,16 @@
-# Database Basics 
+# Database Basics
 
 ## Learning Goals
 
 - Describe how relational databases store data in tables composed of columns and rows
-- Use lower case and snake_case conventions for column names
-- Use the `CREATE TABLE` keywords to create a new table with columns, including the `id` column
-- Use the `.help` command to get a complete list of SQL commands
-- Use the `.tables` command to list all the tables in a database
-- Use the `.schema` command to look at the structure of a database
-- Use the `ALTER TABLE` keywords to add columns to a table
-- Use the `DROP TABLE` keywords to delete a table
+- Understand database naming conventions
+- Use the `CREATE TABLE`, `ALTER TABLE` and `DROP TABLE` commands
+- Use the `.help`, `.tables`, and `.schema` commands
 
 ## Introduction
 
 We'll cover how to create and delete database tables in SQLite as well as how to
-add columns to an existing table.  
+add columns to an existing table.
 
 ## Database Structure
 
@@ -55,17 +51,17 @@ about a person.
 ### Note on Column Names
 
 When we name columns in our database, there are a couple of conventions we will
-follow. The first is that we will always use lowercase letters when referring to
-columns in our database. SQLite isn't case sensitive about its commands or
-column names, but it is generally best practice for us to stick to lowercase for
-our column names.
+follow. The first is that we will always use **lowercase letters** when
+referring to column names in our database. SQLite isn't case sensitive about its
+commands or column names, but it is generally best practice for us to stick to
+lowercase for our column names.
 
 The second convention we want to follow is more important. That is, when we have
 multiple words in a column name, we link them together using underscores rather
-than spaces. We call this convention "snake_case". So, for instance, if we
+than spaces. We call this convention **snake case**. So, for instance, if we
 wanted to be more specific with our email column above, we can name it
-email\_address. If we wanted to split up name to first and last we might have
-columns called first\_name and last\_name.
+email_address. If we wanted to split up name to first and last we might have
+columns called `first_name` and `last_name`.
 
 ## Database Tables
 
@@ -90,16 +86,16 @@ store.
 Let's give it a shot. For the purposes of this code along, you'll be typing
 these commands into your terminal.
 
-### Code Along I: Creating a Table
+### Code Along 1: Creating a Table
 
-* In the terminal let's create our new database and start sqlite3 by running the
-  following:
+In the terminal let's create our new database and start `sqlite3` by running the
+following:
 
-```sql
+```sh
 sqlite3 pet_database.db
 ```
 
-* Now, at our sqlite prompt, let's create our table:
+Now, at our SQLite prompt, let's create our table:
 
 ```bash
 CREATE TABLE cats;
@@ -137,7 +133,7 @@ Let's break down the above code:
 3. Every table we create, regardless of the other column names and data types,
    should be defined with an id INTEGER PRIMARY KEY column, including the
    integer data type and primary key designation. Our SQLite database tables
-   *must be indexed by a number*. We want each row in our table to have a
+   _must be indexed by a number_. We want each row in our table to have a
    number, which we'll call "id", just like in an Excel spreadsheet. Numbering
    our table rows makes our data that much easier to access, update, and
    organize. SQLite comes with a data type designation called "Primary Key".
@@ -150,7 +146,7 @@ type `.help` into the sqlite prompt.
 
 ![Sqlite help output](https://curriculum-content.s3.amazonaws.com/phase-3/database-basics/sqlite-help.png)
 
-Woah, that's a lot. Don't worry too much about all of these different commands
+Wow, that's a lot. Don't worry too much about all of these different commands
 right now. Just know that you can always use `.help` to check out the available
 options.
 
@@ -170,6 +166,11 @@ CREATE TABLE cats (
 );
 ```
 
+You can also use the SQLite VSCode extension, or DB Browser for SQLite, to see a
+visual representation of the table. There won't be much to look at yet, since we
+haven't added any data to the table; but you will be able to see the structure
+of the table.
+
 Let's move on to altering our table.
 
 ### Alter Table
@@ -178,9 +179,9 @@ Let's say that, after creating a database and creating a table to live inside
 that database, we decide we want to add or remove a column. We can do so with
 the `ALTER TABLE` statement.
 
-### Code Along II: Adding, Removing and Renaming Columns
+### Code Along 2: Adding, Removing and Renaming Columns
 
-* Let's say we want to add a new column, `breed`, to our `cats` table:
+Let's say we want to add a new column, `breed`, to our `cats` table:
 
 ```sql
 ALTER TABLE cats ADD COLUMN breed TEXT;
@@ -205,7 +206,8 @@ structure.
 
 Unfortunately, altering a column name and/or deleting a column can be tricky in
 SQLite3. There are workarounds, however. We're not going to get into that right
-now, but you can explore the [documentation on this topic](https://www.sqlite.org/lang_altertable.html).
+now, but you can explore the
+[documentation on this topic](https://www.sqlite.org/lang_altertable.html).
 
 Fortunately, SQLite still supports most of what we'll need one way or another.
 For now, if you need to change a column name, it's best to simply delete the
@@ -213,10 +215,10 @@ table and re-create it.
 
 ### Drop Table
 
-Lastly, we'll discuss how to delete a table from a database with the `DROP
-TABLE` statement.
+Lastly, we'll discuss how to delete a table from a database with the
+`DROP TABLE` statement.
 
-### Code Along III: Deleting a Table
+### Code Along 3: Deleting a Table
 
 Deleting a table is very simple:
 
