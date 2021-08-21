@@ -48,6 +48,27 @@ table called "People" you could imagine a structure like this:
 Each column has a name, and each row contains the corresponding information
 about a person.
 
+Thinking to what you've learned already about object oriented Ruby, you can also
+imagine how we might connect the idea of a **table** in SQL to a **class** in
+Ruby, and a **record** within a table to an **instance** of a class. For the example
+above, our Ruby representation of those same objects might look like this:
+
+```rb
+class Person
+  attr_accessor :name, :age, :email
+
+  def initialize(name, age, email)
+    @name = name
+    @age = age
+    @email = email
+  end
+end
+
+bob = Person.new("Bob", 29, "bob@flatironschool.com")
+avi = Person.new("Avi", 28, "avi@flatironschool.com")
+adam = Person.new("Adam", 28, "adam@flatironschool.com")
+```
+
 ### Note on Column Names
 
 When we name columns in our database, there are a couple of conventions we will
