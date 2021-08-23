@@ -94,19 +94,19 @@ these commands into your terminal.
 In the terminal let's create our new database and start `sqlite3` by running the
 following:
 
-```sh
-sqlite3 pet_database.db
+```console
+$ sqlite3 pet_database.db
 ```
 
 Now, at our SQLite prompt, let's create our table:
 
-```bash
+```sql
 CREATE TABLE cats;
 ```
 
 You should see the following error:
 
-```sql
+```console
 Error: near ";": syntax error
 ```
 
